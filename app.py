@@ -9,6 +9,95 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+
+def game_settings():
+    """Game settings function for intensity level and game type selection"""
+    # Initialize session state for settings
+    if 'intensity_level' not in st.session_state:
+        st.session_state.intensity_level = 'mild'
+    if 'game_type' not in st.session_state:
+        st.session_state.game_type = 'truth'
+
+    # Intensity Level Selection
+    st.header("Select Intensity Level")
+    intensity_options = {
+        'mild': 'Mild',
+        'funny': 'Funny',
+        'spicy': 'Spicy',
+        'drunk': 'Drunk'
+    }
+
+    # Create radio buttons for intensity
+    intensity_level = st.radio(
+        label="",
+        options=list(intensity_options.keys()),
+        format_func=lambda x: intensity_options[x],
+        key="intensity_radio",
+        horizontal=False,
+        label_visibility="collapsed"
+    )
+
+    # Game Type Selection
+    st.header("Choose Game Type")
+    game_type = st.radio(
+        label="",
+        options=['truth', 'dare'],
+        format_func=lambda x: x.capitalize(),
+        key="game_type_radio",
+        horizontal=False,
+        label_visibility="collapsed"
+    )
+
+    # Update session state
+    st.session_state.intensity_level = intensity_level
+    st.session_state.game_type = game_type
+
+    # Add some spacing
+    st.write("")
+
+    # Display current settings
+    st.write(f"Current Settings:")
+    st.write(f"- Intensity: {intensity_options[intensity_level]}")
+    st.write(f"- Game Type: {game_type.capitalize()}")
+
+    return {
+        'intensity': intensity_level,
+        'game_type': game_type
+    }
+
+
+# Custom CSS to style the radio buttons like checkboxes
+st.markdown("""
+<style>
+    div[data-testid="stRadio"] > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    div[data-testid="stRadio"] > div > label {
+        padding: 0.5rem;
+        background-color: #2C3034;
+        border-radius: 4px;
+        cursor: pointer;
+        color: white;
+    }
+    div[data-testid="stRadio"] > div > label:hover {
+        background-color: #3C4044;
+    }
+    div[data-testid="stRadio"] > div > label > div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .stRadio > label {
+        background-color: #2C3034;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Truth questions categorized by intensity and gender
 TRUTHS = {
     'mild': {
