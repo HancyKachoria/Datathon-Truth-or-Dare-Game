@@ -1,34 +1,32 @@
-# InsightMate - AI Document Analyst
+# Truth or Dare AI 🎲
 
-InsightMate is an AI-powered document analysis tool that helps users understand and interact with their documents through smart summarization, contextual Q&A, and key insights extraction.
+An AI-powered interactive Truth or Dare game that adapts to player preferences, offering personalized questions and dares based on intensity levels and player demographics.
 
 ## Features
 
-- 📄 Document Upload (PDF and TXT)
-- 📝 Smart Summarization
-- 💬 Contextual Q&A
-- 🔍 Semantic Search
-- 🎯 Key Insights Extraction
+- 🎯 Multiple intensity levels (mild, funny, spicy, drunk)
+- 👥 Gender-specific and all-gender questions
+- 🤖 AI-powered content generation
+- 🎮 Interactive gameplay
+- 🎨 Modern, responsive UI
 
-## Architecture
-
-The application is built using:
+## Tech Stack
 
 - **Frontend**: Streamlit
-- **LLM**: Google's Gemini Pro
-- **Vector Database**: ChromaDB
-- **Document Processing**: PyMuPDF
+- **Backend**: Python
+- **AI**: Google's Gemini Pro API
+- **Version Control**: Git
 
-## Setup
+## Installation
 
 1. Clone the repository:
 
 ```bash
 git clone <repository-url>
-cd insightmate
+cd truth-or-dare-ai
 ```
 
-2. Create a virtual environment and activate it:
+2. Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
@@ -56,19 +54,18 @@ streamlit run app.py
 ## Usage
 
 1. Open the application in your web browser (default: http://localhost:8501)
-2. Upload a PDF or text document
-3. View the AI-generated summary
-4. Ask questions about the document content
-5. Get insights and answers in real-time
+2. Select your preferred intensity level
+3. Choose your demographic preferences
+4. Start playing and enjoy the AI-generated questions and dares!
 
 ## Project Structure
 
 ```
-insightmate/
+truth-or-dare-ai/
 ├── app.py              # Main application file
 ├── requirements.txt    # Project dependencies
 ├── .env               # Environment variables
-└── db/                # ChromaDB storage directory
+└── .gitignore         # Git ignore file
 ```
 
 ## Contributing
@@ -78,3 +75,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Google's Gemini Pro API for AI capabilities
+- Streamlit for the web framework
+- All contributors and testers
