@@ -1,6 +1,21 @@
 [theme]
-primaryColor="#FF4B4B"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#31333F"
-font="sans serif"
+# Main colors
+primaryColor="#FF4B4B"         # Primary accent color (buttons, interactive elements)
+backgroundColor="#FFFFFF"       # Main background
+secondaryBackgroundColor="#F0F2F6"  # Sidebar, cards, input background
+textColor="#31333F"            # Main text color
+
+# Input and widget colors
+inputTextColor="#31333F"       # Color of text in input fields
+inputBackgroundColor="#F0F2F6" # Background of input fields
+
+# Font settings
+font="sans serif"              # Main font family
+
+# Base text colors
+headingColor="#FF4B4B"        # Color for h1, h2, h3 headings
+bodyColor="#31333F"           # Regular text color
+
+# Widget specific colors
+widgetBackgroundColor="#F0F2F6"  # Background color for widgets
+widgetBorderColor="#E0E2E6"      # Border color for widgets

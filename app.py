@@ -76,13 +76,13 @@ st.markdown("""
     }
     div[data-testid="stRadio"] > div > label {
         padding: 0.5rem;
-        background-color: #2C3034;
+        background-color: #F0F2F6;
         border-radius: 4px;
         cursor: pointer;
-        color: white;
+        color: #31333F;
     }
     div[data-testid="stRadio"] > div > label:hover {
-        background-color: #3C4044;
+        background-color: #E0E2E6;
     }
     div[data-testid="stRadio"] > div > label > div {
         display: flex;
@@ -90,10 +90,80 @@ st.markdown("""
         gap: 0.5rem;
     }
     .stRadio > label {
-        background-color: #2C3034;
+        background-color: #F0F2F6;
         padding: 10px;
         border-radius: 5px;
         margin: 5px 0;
+    }
+
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    
+    /* Apply custom fonts */
+    h1, h2, h3, h4, h5, h6, .stMarkdown, .stTextInput, .stSelectbox, .stButton {
+        font-family: 'sans serif' !important;
+    }
+    
+    /* Style the main title */
+    h1 {
+        color: #FF4B4B;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Style the sidebar */
+    .css-1d391kg {
+        background-color: #F0F2F6;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+    
+    /* Style buttons */
+    .stButton>button {
+        background-color: #FF4B4B;
+        color: #FFFFFF;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        margin: 0.5rem 0;
+        transition: all 0.3s ease;
+    }
+    
+    .stButton>button:hover {
+        background-color: #FF6B6B;
+        transform: translateY(-2px);
+    }
+    
+    /* Style the expander */
+    .stExpander {
+        background-color: #F0F2F6;
+        border-radius: 1rem;
+        padding: 1.5rem;
+    }
+    
+    /* Style the toggle button */
+    div[data-testid="stButton"] button[kind="secondary"] {
+        background-color: #FF4B4B;
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+    
+    div[data-testid="stButton"] button[kind="secondary"]:hover {
+        background-color: #FF6B6B;
+    }
+    
+    /* Style the challenge text */
+    .challenge-text {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        padding: 1.5rem;
+        background-color: #F0F2F6;
+        color: #31333F;
+        border-radius: 1rem;
+        margin: 1rem 0;
+        border: 1px solid #E0E2E6;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -521,78 +591,3 @@ if st.session_state.participants:
         st.info("👆 Add some participants to start playing!")
 else:
     st.info("👆 Add some participants to start playing!")
-
-# Add custom CSS for better fonts and styling
-st.markdown("""
-<style>
-    /* Import Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-    
-    /* Apply custom fonts */
-    h1, h2, h3, h4, h5, h6, .stMarkdown, .stTextInput, .stSelectbox, .stButton {
-        font-family: 'Poppins', sans-serif !important;
-    }
-    
-    /* Style the main title */
-    h1 {
-        color: #FF4B4B;
-        font-weight: 600;
-        text-align: center;
-        margin-bottom: 1.5rem;
-    }
-    
-    /* Style the sidebar */
-    .css-1d391kg {
-        background-color: #f0f2f6;
-        padding: 1.5rem;
-        border-radius: 1rem;
-    }
-    
-    /* Style buttons */
-    .stButton>button {
-        background-color: #FF4B4B;
-        color: white;
-        font-weight: 600;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        border: none;
-        margin: 0.5rem 0;
-        transition: all 0.3s ease;
-    }
-    
-    .stButton>button:hover {
-        background-color: #FF6B6B;
-        transform: translateY(-2px);
-    }
-    
-    /* Style the expander */
-    .stExpander {
-        background-color: #f0f2f6;
-        border-radius: 1rem;
-        padding: 1.5rem;
-    }
-    
-    /* Style the toggle button */
-    div[data-testid="stButton"] button[kind="secondary"] {
-        background-color: #4B8BBE;
-        color: white;
-        font-weight: 600;
-    }
-    
-    div[data-testid="stButton"] button[kind="secondary"]:hover {
-        background-color: #5B9BCE;
-    }
-    
-    /* Style the challenge text */
-    .challenge-text {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        padding: 1.5rem;
-        background-color: #1E1E1E;
-        color: white;
-        border-radius: 1rem;
-        margin: 1rem 0;
-        border: 1px solid #333;
-    }
-</style>
-""", unsafe_allow_html=True)
